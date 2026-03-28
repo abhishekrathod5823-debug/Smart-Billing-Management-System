@@ -21,7 +21,8 @@ body {
     width: 300px;
     padding: 30px;
     border-radius: 20px;
-
+    border-top-right-radius: 20px ;
+    border-bottom-right-radius: 20px;
     background: linear-gradient(to bottom, #1e3c72, #2a5298);
     color: white;
     text-align: center;
