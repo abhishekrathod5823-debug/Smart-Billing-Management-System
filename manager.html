@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="hi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Owner Login</title>
+    <style>
+        * { box-sizing: border-box; }
+        
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: 'Segoe UI', Arial, sans-serif;
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            /* Yahan apni background image ka path dalein */
+            background: #041530 url('your-tech-bg.jpg') no-repeat center center;
+            background-size: cover;
+        }
+
+        .login-card {
+            display: flex;
+            width: 850px;
+            height: 500px;
+            border-radius: 40px;
+            overflow: hidden;
+            box-shadow: 0 20px 50px rgba(0,0,0,0.6);
+        }
+
+        /* Left Section (Blue) */
+        .left-panel {
+            flex: 1;
+            background: linear-gradient(180deg, #1a3a7a 0%, #4a80e0 100%);
+            padding: 60px 40px;
+            display: flex;
+            flex-direction: column;
+            color: white;
+        }
+
+        .left-panel h1 {
+            font-size: 55px;
+            margin: 0;
+            font-weight: 300;
+        }
+
+        .left-panel h2 {
+            font-size: 28px;
+            margin: 0 0 40px 0;
+            font-weight: 400;
+        }
+
+        .input-box {
+            width: 100%;
+            padding: 18px 25px;
+            margin-bottom: 20px;
+            border: none;
+            border-radius: 40px;
+            background: #d9d9d9;
+            font-size: 18px;
+            outline: none;
+        }
+
+        .submit-btn {
+            width: 100%;
+            padding: 16px;
+            border: none;
+            border-radius: 40px;
+            background: #0000ff;
+            color: white;
+            font-size: 20px;
+            font-weight: bold;
+            cursor: pointer;
+            text-decoration: none;
+            display: block;
+            text-align: center;
+            margin-top: 10px;
+            transition: 0.3s;
+        }
+
+        .submit-btn:hover { background: #0000cc; }
+
+        /* Right Section (White) */
+        .right-panel {
+            flex: 1;
+            background: transparent;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 30px;
+        }
+
+        .white-box {
+            background: white;
+            width: 100%;
+            height: 100%;
+            border-radius: 50px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            overflow: hidden;
+        }
+
+        .owner-img {
+            max-width: 90%;
+            max-height: 90%;
+            object-fit: contain;
+        }
+
+        /* Mobile Responsive */
+        @media (max-width: 800px) {
+            .login-card { flex-direction: column; width: 90%; height: auto; }
+            .right-panel { display: none; }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="login-card">
+        <div class="left-panel">
+            <h1>welcome</h1>
+            <h2>manager login</h2>
+            
+            <form action="#">
+                <input type="email" class="input-box" placeholder="Email" required>
+                <input type="password" class="input-box" placeholder="Password" required>
+                
+                <a href="manager2.html" class="submit-btn">Submit</a>
+            </form>
+        </div>
+
+        <div class="right-panel">
+            <div class="white-box">
+                <img src="c1.jpg" alt="Owner" class="owner-img">
+            </div>
+        </div>
+    </div>
+
+</body>
+</html>

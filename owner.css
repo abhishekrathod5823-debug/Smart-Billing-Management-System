@@ -1,0 +1,86 @@
+body {
+    margin: 0;
+    font-family: Arial;
+
+    /* background tum apna dalna */
+    background-image: url("y.avif");
+    background-size: cover;
+    background-position: center;
+}
+
+/* main container */
+.main {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+/* left login box */
+.login-box {
+    width: 300px;
+    padding: 30px;
+    border-radius: 20px;
+
+    background: linear-gradient(to bottom, #1e3c72, #2a5298);
+    color: white;
+    text-align: center;
+
+    animation: fade 2s;
+}
+
+.login-box h1 {
+    margin: 0;
+    font-size: 35px;
+}
+
+.login-box p {
+    margin-bottom: 20px;
+}
+
+/* input fields */
+.login-box input {
+    width: 90%;
+    padding: 10px;
+    margin: 10px 0;
+
+    border: none;
+    border-radius: 20px;
+}
+
+/* button */
+.login-box button {
+    width: 100%;
+    padding: 10px;
+    border: none;
+    border-radius: 20px;
+
+    background: blue;
+    color: white;
+    margin-top: 10px;
+
+    cursor: pointer;
+}
+
+/* hover effect */
+.login-box button:hover {
+    background: darkblue;
+}
+
+/* right image box */
+.image-box {
+    margin-left: 40px;
+    background: white;
+    padding: 20px;
+    border-radius: 20px;
+}
+
+.image-box img {
+    width: 250px;
+}
+
+/* simple animation */
+@keyframes fade {
+    from {opacity: 0;}
+    to {opacity: 1;}
+}

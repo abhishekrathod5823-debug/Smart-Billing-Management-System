@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="hi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Owner Dashboard - Order List</title>
+    <style>
+        * { box-sizing: border-box; font-family: 'Segoe UI', sans-serif; }
+        body { margin: 0; display: flex; height: 100vh; background-color: #1a3a7a; color: white; overflow: hidden; }
+
+        /* Sidebar Section */
+        .sidebar {
+            width: 260px;
+            background-color: #6a96ff;
+            display: flex;
+            flex-direction: column;
+            padding: 25px;
+        }
+        
+        .profile-box { display: flex; align-items: center; gap: 12px; margin-bottom: 40px; }
+        .profile-img { width: 55px; height: 55px; border-radius: 50%; background: #fff; }
+
+        .nav-btn {
+            width: 100%;
+            padding: 12px;
+            background: white;
+            color: black;
+            border-radius: 25px;
+            text-align: center;
+            font-weight: bold;
+            text-decoration: none;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+        }
+
+        /* Main Content Section */
+        .main-content { flex: 1; padding: 25px; overflow-y: auto; }
+        .top-header { display: flex; justify-content: space-between; align-items: center; margin-bottom: 20px; }
+
+        /* Card Styling */
+        .white-card {
+            background: white;
+            border-radius: 40px;
+            padding: 30px;
+            color: black;
+            max-width: 700px;
+            margin: 0 auto 20px auto;
+            box-shadow: 0 10px 25px rgba(0,0,0,0.2);
+        }
+
+        .white-card h2 { margin: 0 0 20px 0; font-size: 26px; font-weight: 400; }
+
+        /* Input Styling */
+        .input-grey {
+            width: 100%;
+            padding: 12px 20px;
+            margin-bottom: 12px;
+            background: #d9d9d9;
+            border: none;
+            border-radius: 20px;
+            outline: none;
+            font-size: 16px;
+        }
+
+        .blue-btn {
+            width: 100%;
+            padding: 12px;
+            background: #3f51b5;
+            color: white;
+            border: none;
+            border-radius: 20px;
+            font-size: 18px;
+            cursor: pointer;
+            transition: 0.3s;
+        }
+
+        /* Table Styling */
+        .order-table { width: 100%; border-collapse: collapse; margin-top: 10px; }
+        .table-head { background: #d9d9d9; }
+        .table-head th { padding: 12px; text-align: left; border-radius: 5px; }
+        .order-table td { padding: 12px; border-bottom: 1px solid #eee; }
+
+        .total-bar {
+            background: #3f51b5;
+            color: white;
+            text-align: center;
+            padding: 15px;
+            border-radius: 20px;
+            margin-top: 20px;
+            font-size: 20px;
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="sidebar">
+        <div class="profile-box">
+            <img src="a1.jpg" class="profile-img" alt="O">
+            <span style="font-size: 24px;">Owner</span>
+        </div>
+        <a href="#" class="nav-btn">Oder list</a>
+    </div>
+
+    <div class="main-content">
+        <div class="top-header">
+            <h1>Welcome owner</h1>
+            <img src="a1.jpg" class="profile-img" alt="O">
+        </div>
+
+        <div class="white-card">
+            <h2>Oder list</h2>
+            <input type="text" id="pName" class="input-grey" placeholder="Product">
+            <input type="number" id="pQty" class="input-grey" placeholder="Quantity">
+            <input type="number" id="pPrice" class="input-grey" placeholder="Price">
+            <button class="blue-btn" onclick="addItem()">Add+</button>
+        </div>
+
+        <div class="white-card">
+            <table class="order-table" id="orderTable">
+                <thead class="table-head">
+                    <tr>
+                        <th>Product</th>
+                        <th>Quantity</th>
+                        <th>Price</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    </tbody>
+            </table>
+
+            <div class="total-bar" id="totalDisplay">
+                Total = ₹ 0
+            </div>
+        </div>
+    </div>
+
+    <script>
+        let grandTotal = 0;
+
+        function addItem() {
+            let name = document.getElementById('pName').value;
+            let qty = document.getElementById('pQty').value;
+            let price = document.getElementById('pPrice').value;
+
+            if(name && qty && price) {
+                let table = document.getElementById('orderTable').getElementsByTagName('tbody')[0];
+                let newRow = table.insertRow();
+
+                newRow.innerHTML = `<td>${name}</td><td>${qty}</td><td>${price}</td>`;
+                
+                // Total calculate karna
+                grandTotal += parseFloat(price);
+                document.getElementById('totalDisplay').innerText = "Total = ₹ " + grandTotal;
+
+                // Inputs clear karna
+                document.getElementById('pName').value = "";
+                document.getElementById('pQty').value = "";
+                document.getElementById('pPrice').value = "";
+            } else {
+                alert("Please fill all fields!");
+            }
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,68 @@
+body {
+    margin: 0;
+    font-family: Arial;
+
+    /* tum yaha apni background image lagana */
+    background-image: url("z1.jpg");
+    background-size: cover;
+    background-position: center;
+}
+
+.box {
+    width: 80%;
+    margin: 80px auto;
+    padding: 40px;
+    border-radius: 20px;
+
+    background-color: rgba(0, 0, 100, 0.7);
+    text-align: center;
+    color: white;
+
+    /* simple animation */
+    animation: fade 2s;
+}
+
+h1 {
+    font-size: 40px;
+}
+
+p {
+    font-size: 18px;
+    margin-bottom: 30px;
+}
+
+.cards {
+    display: flex;
+    justify-content: space-around;
+}
+
+/* card design */
+.card {
+    width: 180px;
+    padding: 20px;
+    border-radius: 20px;
+
+    background-color: #3b5dc9;
+    text-decoration: none;
+    color: white;
+
+    transition: 0.3s;
+}
+
+/* image */
+.card img {
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+}
+
+/* hover animation */
+.card:hover {
+    transform: translateY(-10px);
+}
+
+/* animation */
+@keyframes fade {
+    from {opacity: 0;}
+    to {opacity: 1;}
+}

@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="hi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Manager Dashboard - Udhari List</title>
+    <style>
+        * { box-sizing: border-box; font-family: 'Segoe UI', sans-serif; }
+        body { margin: 0; display: flex; height: 100vh; background-color: #1a3a7a; color: white; overflow: hidden; }
+
+        /* Sidebar Styling */
+        .sidebar {
+            width: 260px;
+            background-color: #6a96ff;
+            display: flex;
+            flex-direction: column;
+            padding: 25px;
+        }
+        
+        .profile-container {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            margin-bottom: 40px;
+        }
+
+        .profile-img {
+            width: 55px;
+            height: 55px;
+            border-radius: 50%;
+            background: #fff;
+            object-fit: cover;
+        }
+
+        .manager-text { font-size: 28px; font-weight: 400; color: white; }
+
+        /* Sidebar Buttons */
+        .nav-link {
+            width: 100%;
+            padding: 15px;
+            margin-bottom: 15px;
+            border-radius: 30px;
+            text-align: center;
+            text-decoration: none;
+            font-weight: 500;
+            font-size: 18px;
+            transition: 0.3s;
+        }
+
+        .btn-active { background: white; color: black; box-shadow: 0 4px 10px rgba(0,0,0,0.1); }
+        .btn-inactive { background: transparent; color: white; opacity: 0.8; }
+        .btn-inactive:hover { opacity: 1; }
+
+        /* Main Content Area */
+        .main-area { flex: 1; padding: 30px; display: flex; flex-direction: column; }
+        
+        .header-top {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 30px;
+        }
+
+        .header-top h1 { font-size: 32px; font-weight: 400; margin: 0; }
+
+        /* White List Card */
+        .list-card {
+            background: white;
+            border-radius: 50px;
+            padding: 40px;
+            color: black;
+            flex-grow: 1; /* Card ko niche tak stretch karne ke liye */
+            max-width: 850px;
+            margin: 0 auto 20px auto;
+            width: 100%;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+        }
+
+        .list-card h2 { margin: 0 0 30px 0; font-size: 30px; font-weight: 400; }
+
+        /* Table Styling */
+        .udhari-table { width: 100%; border-collapse: collapse; }
+        
+        .table-header { background: #d9d9d9; }
+        .table-header th { 
+            padding: 12px; 
+            text-align: left; 
+            font-weight: 500;
+            color: #333;
+        }
+        
+        /* Table Rounded Corners trick */
+        .table-header th:first-child { border-radius: 10px 0 0 10px; }
+        .table-header th:last-child { border-radius: 0 10px 10px 0; }
+
+        .udhari-table td { 
+            padding: 20px 12px; 
+            font-size: 17px;
+            border-bottom: 1px solid #f0f0f0; 
+        }
+
+        .price-text { text-align: right; }
+
+    </style>
+</head>
+<body>
+
+    <div class="sidebar">
+        <div class="profile-container">
+            <img src="c1.jpg" class="profile-img" alt="M">
+            <span class="manager-text">Manger</span>
+        </div>
+        
+        <a href="#" class="nav-link btn-active">Udhari list</a>
+        <a href="#" class="nav-link btn-inactive">Paid list</a>
+    </div>
+
+    <div class="main-area">
+        <div class="header-top">
+            <h1>Welcome manager</h1>
+            <img src="c1.jpg" class="profile-img" alt="M">
+        </div>
+
+        <div class="list-card">
+            <h2>Udhari list</h2>
+            
+            <table class="udhari-table">
+                <thead class="table-header">
+                    <tr>
+                        <th style="width: 15%;">No.</th>
+                        <th style="width: 35%;">Name</th>
+                        <th style="width: 25%;">Phon</th>
+                        <th style="width: 25%; text-align: right;">Pending</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>1</td>
+                        <td>Suresh Bhai</td>
+                        <td>85645</td>
+                        <td class="price-text">₹ 5000</td>
+                    </tr>
+                    <tr>
+                        <td>2</td>
+                        <td>Jiganesh Bhai</td>
+                        <td>96548</td>
+                        <td class="price-text">₹ 3000</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+
+</body>
+</html>

@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="hi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cashier Dashboard - Generate Bill</title>
+    <style>
+        * { box-sizing: border-box; font-family: sans-serif; }
+        body { margin: 0; display: flex; height: 100vh; background-color: #2b4c8c; color: white; }
+
+        /* Sidebar Styling */
+        .sidebar {
+            width: 250px;
+            background-color: #6a96ff;
+            display: flex;
+            flex-direction: column;
+            padding: 20px;
+            align-items: center;
+        }
+        .profile-section { display: flex; align-items: center; gap: 10px; margin-bottom: 40px; width: 100%; }
+        .profile-img { width: 50px; height: 50px; border-radius: 50%; background: #eee; }
+        
+        .nav-btn {
+            width: 100%;
+            padding: 15px;
+            margin: 10px 0;
+            border-radius: 25px;
+            border: none;
+            cursor: pointer;
+            font-weight: bold;
+            text-align: center;
+            text-decoration: none;
+        }
+        .btn-white { background: white; color: black; }
+        .btn-trans { background: transparent; color: white; }
+
+        /* Main Content */
+        .main-content { flex: 1; padding: 20px; overflow-y: auto; }
+        .header { display: flex; justify-content: space-between; align-items: center; margin-bottom: 20px; }
+
+        /* White Cards */
+        .card {
+            background: white;
+            border-radius: 40px;
+            padding: 30px;
+            color: black;
+            margin-bottom: 20px;
+            max-width: 700px;
+            margin-left: auto; margin-right: auto;
+        }
+
+        .card h2 { margin-top: 0; font-size: 24px; }
+
+        /* Form Inputs */
+        .input-grey {
+            width: 100%;
+            padding: 12px 20px;
+            margin: 8px 0;
+            background: #d9d9d9;
+            border: none;
+            border-radius: 20px;
+            outline: none;
+        }
+
+        .btn-add {
+            width: 100%;
+            background: #3f51b5;
+            color: white;
+            padding: 12px;
+            border: none;
+            border-radius: 20px;
+            margin-top: 10px;
+            cursor: pointer;
+        }
+
+        /* Table Styling */
+        .bill-table { width: 100%; border-collapse: collapse; margin-top: 10px; }
+        .table-head { background: #d9d9d9; border-radius: 10px; }
+        .table-head th { padding: 10px; text-align: left; }
+        .bill-table td { padding: 15px 10px; border-bottom: 1px solid #eee; }
+
+        /* Total & Payment Buttons */
+        .total-bar {
+            background: #3f51b5;
+            color: white;
+            text-align: center;
+            padding: 12px;
+            border-radius: 20px;
+            margin: 20px 0;
+            font-weight: bold;
+        }
+
+        .payment-options { display: flex; justify-content: space-around; gap: 20px; }
+        .btn-payment {
+            flex: 1;
+            padding: 15px;
+            border-radius: 30px;
+            border: none;
+            color: white;
+            font-weight: bold;
+            cursor: pointer;
+            font-size: 16px;
+        }
+        .btn-cash { background: #00ff00; color: black; }
+        .btn-online { background: #0000ff; }
+
+    </style>
+</head>
+<body>
+
+    <div class="sidebar">
+        <div class="profile-section">
+            <img src="b1.jpg" class="profile-img" alt="User">
+            <span style="font-size: 20px;">Cashier</span>
+        </div>
+        <a href="#" class="nav-btn btn-white">Online/cash</a>
+        <a href="#" class="nav-btn btn-trans">Udhar</a>
+    </div>
+
+    <div class="main-content">
+        <div class="header">
+            <h1>Welcome Cashier</h1>
+            <img src="b1.jpg" class="profile-img" alt="User">
+        </div>
+
+        <div class="card">
+            <h2>Generate Bill</h2>
+            <input type="text" class="input-grey" placeholder="Product">
+            <input type="number" class="input-grey" placeholder="Quantity">
+            <input type="number" class="input-grey" placeholder="Price">
+            <button class="btn-add">Add+</button>
+        </div>
+
+        <div class="card">
+            <table class="bill-table">
+                <thead class="table-head">
+                    <tr>
+                        <th>Product</th>
+                        <th>Quantity</th>
+                        <th>Price</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>sugar</td>
+                        <td>5</td>
+                        <td>85</td>
+                    </tr>
+                    <tr>
+                        <td>milk</td>
+                        <td>2</td>
+                        <td>62</td>
+                    </tr>
+                </tbody>
+            </table>
+
+            <div class="total-bar">
+                Total = ₹ 147
+            </div>
+
+            <div class="payment-options">
+                <button class="btn-payment btn-cash">cash</button>
+                <button class="btn-payment btn-online">Online</button>
+            </div>
+        </div>
+    </div>
+
+</body>
+</html>

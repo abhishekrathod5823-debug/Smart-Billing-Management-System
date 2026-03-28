@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cashier Login</title>
+    <style>
+        /* 1. Background Image yahan set karein */
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: url('y.avif') no-repeat center center fixed;
+            background-size: cover;
+            background-color: #051937; /* Fallback color */
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+
+        /* Main Container */
+        .login-container {
+            display: flex;
+            width: 850px;
+            height: 500px;
+            border-radius: 30px;
+            overflow: hidden;
+            box-shadow: 0 15px 35px rgba(0,0,0,0.5);
+        }
+
+        /* Left Side: Login Form */
+        .login-box {
+            flex: 1;
+            background: linear-gradient(180deg, #1e3c72 0%, #2a5298 100%);
+            padding: 50px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            color: white;
+        }
+
+        .login-box h1 {
+            font-size: 50px;
+            margin-bottom: 5px;
+            font-weight: 400;
+        }
+
+        .login-box p {
+            font-size: 22px;
+            margin-bottom: 40px;
+            opacity: 0.9;
+        }
+
+        /* Inputs */
+        .input-field {
+            width: 100%;
+            padding: 15px 25px;
+            margin-bottom: 20px;
+            border: none;
+            border-radius: 35px;
+            background: #d1d5db;
+            font-size: 16px;
+            outline: none;
+            box-sizing: border-box;
+        }
+
+        /* Submit Button as a Link */
+        .btn-link {
+            text-decoration: none;
+            display: block;
+            width: 100%;
+        }
+
+        .submit-btn {
+            width: 100%;
+            padding: 15px;
+            border: none;
+            border-radius: 35px;
+            background: #0000ff;
+            color: white;
+            font-size: 18px;
+            font-weight: bold;
+            cursor: pointer;
+            transition: 0.3s;
+        }
+
+        .submit-btn:hover {
+            background: #0000cc;
+            transform: translateY(-2px);
+        }
+
+        /* Right Side: Image Card */
+        .image-box {
+            flex: 1;
+            background: transparent;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 20px;
+        }
+
+        .white-card {
+            background: white;
+            width: 90%;
+            height: 90%;
+            border-radius: 40px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            overflow: hidden;
+        }
+
+        /* Side wali image yahan fit hogi */
+        .white-card img {
+            max-width: 90%;
+            height: auto;
+        }
+
+        /* Responsive styling for mobile */
+        @media (max-width: 768px) {
+            .login-container {
+                flex-direction: column;
+                width: 90%;
+                height: auto;
+            }
+            .image-box { display: none; } /* Mobile par image hide kar di */
+        }
+    </style>
+</head>
+<body>
+
+    <div class="login-container">
+        <div class="login-box">
+            <h1>welcome</h1>
+            <p>Cashier login</p>
+            
+            <form>
+                <input type="email" class="input-field" placeholder="Email" required>
+                <input type="password" class="input-field" placeholder="Password" required>
+                
+                <a href="cashier2.html" class="btn-link">
+                    <button type="button" class="submit-btn">Submit</button>
+                </a>
+            </form>
+        </div>
+
+        <div class="image-box">
+            <div class="white-card">
+                <img src="b1.jpg" alt="Cashier Image">
+            </div>
+        </div>
+    </div>
+
+</body>
