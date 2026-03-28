@@ -1,37 +1,154 @@
 <!DOCTYPE html>
-<html>
+<html lang="hi">
 <head>
-    <title>Smart Billing</title>
-    <link rel="stylesheet" href="welcome.css">
-</head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Smart Billing System - Welcome</title>
+    <style>
+        /* 1. Basic Setup & Background Animation */
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+            font-family: 'Segoe UI', sans-serif;
+        }
 
+        body {
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            /* Yahan apni tech-background image lagayein */
+            background: #020b1a url('tech_background.jpg') no-repeat center center;
+            background-size: cover;
+            overflow: hidden;
+        }
+
+        /* 2. Main Blue Glass Container */
+        .main-container {
+            width: 90%;
+            max-width: 900px;
+            background: linear-gradient(135deg, rgba(26, 58, 122, 0.9) 0%, rgba(74, 128, 224, 0.7) 100%);
+            border-radius: 50px;
+            padding: 60px 20px;
+            text-align: center;
+            box-shadow: 0 25px 50px rgba(0,0,0,0.5);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            animation: fadeInScale 1s ease-out;
+        }
+
+        h1 {
+            color: white;
+            font-size: 3.5rem;
+            margin-bottom: 5px;
+            font-weight: 400;
+        }
+
+        p {
+            color: #e0e0e0;
+            font-size: 1.5rem;
+            margin-bottom: 50px;
+        }
+
+        /* 3. Cards Section Grid */
+        .cards-grid {
+            display: flex;
+            justify-content: center;
+            gap: 30px;
+            flex-wrap: wrap;
+        }
+
+        /* 4. Individual Card Styling & Animations */
+        .role-card {
+            background: linear-gradient(180deg, #3a6cd9 0%, #214ba3 100%);
+            width: 200px;
+            padding: 30px 15px;
+            border-radius: 35px;
+            text-decoration: none;
+            color: white;
+            transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            box-shadow: 0 10px 20px rgba(0,0,0,0.3);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        /* Hover Effect: Card upar uthega aur glow karega */
+        .role-card:hover {
+            transform: translateY(-15px);
+            box-shadow: 0 20px 40px rgba(0, 102, 255, 0.5);
+            background: linear-gradient(180deg, #4a80e0 0%, #2b5bc4 100%);
+        }
+
+        .img-circle {
+            width: 120px;
+            height: 120px;
+            background: white;
+            border-radius: 50%;
+            margin-bottom: 20px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            overflow: hidden;
+            border: 4px solid rgba(255, 255, 255, 0.2);
+        }
+
+        .img-circle img {
+            width: 80%;
+            height: 80%;
+            object-fit: contain;
+        }
+
+        .role-name {
+            font-size: 1.4rem;
+            font-weight: 500;
+        }
+
+        /* 5. Keyframe Animations */
+        @keyframes fadeInScale {
+            from { opacity: 0; transform: scale(0.9); }
+            to { opacity: 1; transform: scale(1); }
+        }
+
+        /* Mobile View Adjustment */
+        @media (max-width: 700px) {
+            h1 { font-size: 2.2rem; }
+            .role-card { width: 160px; }
+        }
+    </style>
+</head>
 <body>
 
-<div class="box">
+    <div class="main-container">
+        <h1>Welcome</h1>
+        <p>to Our Smart Billing Management System</p>
 
-    <h1>Welcome</h1>
-    <p>to Our Smart Billing Management System</p>
+        <div class="cards-grid">
+            
+            <a href="manager_login.html" class="role-card">
+                <div class="img-circle">
+                    <img src="manager_avatar.png" alt="Manager">
+                </div>
+                <span class="role-name">Manager</span>
+            </a>
 
-    <div class="cards">
+            <a href="owner_login.html" class="role-card">
+                <div class="img-circle">
+                    <img src="owner_avatar.png" alt="Owner">
+                </div>
+                <span class="role-name">Owner</span>
+            </a>
 
-        <a href="manager.html" class="card">
-            <img src="c1.jpg">
-            <h3>Manager</h3>
-        </a>
+            <a href="cashier_login.html" class="role-card">
+                <div class="img-circle">
+                    <img src="cashier_avatar.png" alt="Cashier">
+                </div>
+                <span class="role-name">Cashier</span>
+            </a>
 
-        <a href="owner.html" class="card">
-            <img src="a1.jpg">
-            <h3>Owner</h3>
-        </a>
-
-        <a href="cashier.html" class="card">
-            <img src="b1.jpg">
-            <h3>Cashier</h3>
-        </a>
-
+        </div>
     </div>
-
-</div>
 
 </body>
 </html>
